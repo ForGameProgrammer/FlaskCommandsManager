@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Düzenle{% endblock %}
+{% block body %}
+{% for komut in komutlar %}
+<form method="POST">
+    <div class="container">
+        <input type="hidden" name="id" value="{{ komut.id }}">
+        Komut : <input type="text" name="ad" value="{{ komut.ad }}">
+        İçerik : <input type="text" name="deger" value="{{ komut.deger }}">
+        <input type="submit" name="duzenle" value="Düzenle">
+        <input type="submit" name="sil" value="Sil"></div>
+</form>
+{% endfor %}
+<hr>
+<br>
+<form method="POST">
+    <div class="container">
+        Komut : <input type="text" name="ad">
+        İçerik : <input type="text" name="deger">
+        <input type="submit" name="ekle" value="EKLE">
+    </div>
+</form>
+{% endblock %}
